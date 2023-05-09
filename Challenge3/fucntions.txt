@@ -1,0 +1,10 @@
+The below keys as an array fucntion can solve :
+
+
+const obj = {"x1":{"y1":{"z1":"a1"}}}
+
+const keys = ['x1', 'y1', 'z1']
+const value = keys.reduce((acc,key)=>acc[key], obj)
+
+const getValueFromKeys = (obj, keys, defaultValue)=> (Array.isArray(keys)?keys:keys.split('.')).reduce((acc,key)=>acc[key] || defaultValue, obj)
+
